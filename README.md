@@ -40,11 +40,11 @@ SQLiteでは、bool型は直接サポートされていません。代わりに�
 
 ```dart
 class Todo {
-  int id;
+  int? id;
   String title;
   bool done;
 
-  Todo({required this.id, required this.title, this.done = false});
+  Todo({this.id, required this.title, this.done = false});
 
   // データベースに保存するために、boolをintに変換
   Map<String, dynamic> toJson() {
